@@ -44,7 +44,7 @@ pipeline {
 	    }
 	    stage("Docker push") {
 		steps {
-            sh "docker login -u juanfranciscogonzalez -p Juanfrasco.123
+            		sh "docker login -u juanfranciscogonzalez -p Juanfrasco.123"
 			sh "docker push juanfrasco/calculator"
 		}
 	    }
