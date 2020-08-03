@@ -39,7 +39,7 @@ pipeline {
 	    }
 	    stage("Docker build") {
 		steps {
-		sh "docker build -t leszko/calculator ."
+		sh "docker build -t juanfrasco/calculator ."
 		}
 	    }
      }
