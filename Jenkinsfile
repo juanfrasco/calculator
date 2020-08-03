@@ -44,7 +44,7 @@ pipeline {
 	    }
 	    stage("Docker push") {
 		steps {
-			sh "docker push leszko/calculator"
+			sh "docker push juanfrasco/calculator"
 		}
 	    }
      }
