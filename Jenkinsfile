@@ -44,8 +44,8 @@ pipeline {
 	    }
 	    stage("Docker push") {
 		steps {
-            		#sh "docker login -u juanfranciscogonzalez -p Juanfrasco.123"
-			#sh "docker push juanfranciscogonzalez/calculator"
+            		//sh "docker login -u juanfranciscogonzalez -p Juanfrasco.123"
+			//sh "docker push juanfranciscogonzalez/calculator"
 		}
 	    }
 	    stage("Deploy to staging") {
@@ -58,6 +58,11 @@ pipeline {
 			sleep 60
 			sh "chmod +x acceptance_test.sh && ./acceptance_test.sh"
 		}
-}
+	    }
+	    post {
+		always {
+			sh "docker stop calculator"
+		}
+	    }
      }
 }
