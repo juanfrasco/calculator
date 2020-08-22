@@ -44,8 +44,8 @@ pipeline {
 	    }
 	    stage("Docker push") {
 		    steps {
-                //sh "docker login -u juanfranciscogonzalez -p Juanfrasco.123"
-			    //sh "docker push juanfranciscogonzalez/calculator"
+                sh "docker login -u juanfranciscogonzalez -p Juanfrasco.123"
+			    sh "docker push juanfranciscogonzalez/calculator"
 		    }
 	    }
 	    stage("Deploy to staging") {
@@ -64,6 +64,5 @@ pipeline {
 	     always {
 			    sh "docker stop calculator"
 	    }
-	}
-     
+	}    
 }
